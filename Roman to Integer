@@ -1,0 +1,81 @@
+/*
+Program Name : Roman to Integer
+
+testCase 
+1] input = "III" 
+   output = 3
+2] input = "LVIII" 
+   output = 58
+3] input = "MCMXCIV" 
+   output = 1994
+
+code optimazation 
+1] if statement -> we can tack two condition at a time. 
+2] switch inside choice not create extra variable 
+3] no need of defult case 
+*/
+
+
+class Solution {
+public:
+    int romanToInt(string s) {
+        int sum =0;
+        for(int i=0 ; i<s.length(); i++){
+            switch(s[i]){
+                case 'I':{
+                    sum+=1; 
+                    break;
+                }
+                case 'V':{
+                    if(i>0 && s[i-1]=='I'){
+                    sum+=3;  // sum-=1;
+                    break;
+                    }
+                    sum+=5;
+                    break;
+                }
+                case 'X':{
+                    if(i>0 && s[i-1]=='I'){
+                    sum+=8;  // sum-=1;
+                    break;
+                    }
+                    sum+=10;
+                    break;
+                }
+                case 'L':{
+                    if(i>0 && s[i-1]=='X'){
+                    sum+=30;  // sum-=10;
+                    break;
+                    }
+                    sum+=50;
+                    break;
+                }
+                case 'C':{
+                    if(i>0 && s[i-1]=='X'){
+                    sum+=80;   // sum-=10;
+                    break;
+                    }
+                    sum+=100;
+                    break;
+                }
+                case 'D':{
+                    if(i>0 && s[i-1]=='C'){
+                    sum+=300;  // sum-=100;
+                    break;
+                    }
+                    sum+=500;
+                    break;
+                }
+                case 'M':{
+                    if(i>0 && s[i-1]=='C'){
+                    sum+=800;   // sum-=100;
+                    break;
+                    }
+                    sum+=1000;
+                    break;
+                }
+            }
+        }
+        return sum;
+    }
+};
