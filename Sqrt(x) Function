@@ -1,0 +1,23 @@
+/*
+  Given a non-negative integer x, return the square root of x rounded down to the nearest integer.
+  The returned integer should be non-negative as well.  
+
+  Input: x = 4
+  Output: 2
+
+  Input: x = 8
+  Output: 2
+
+  execution time is 15ms.
+*/
+
+    int mySqrt(int x) {
+        for(int i=1; true ; i++){
+           if(x==(long int)i*i){
+             return  i;    
+           }else if(x<(long int)i*i){
+             return i-1;
+           }            
+        }
+    }
+ 
