@@ -1,0 +1,50 @@
+/*
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+Input: head = [1], n = 1
+Output: []
+
+Input: head = [1,2], n = 1
+Output: [1]
+
+*/
+
+
+
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+        int len = 0;
+        ListNode* temp = head;
+        while(temp!=nullptr){
+            len++;
+            temp=temp->next;
+        }
+        if(len==1){
+            return nullptr;
+        }
+        ListNode* temp1 = head;
+        int count =1;
+        if(len==n){  
+            len = len-1;   
+            while(temp1!=nullptr){
+                if(count==len){
+                    return head->next;
+                }
+                count++;
+                temp1 = temp1->next;
+            }
+            return head;
+        }else{    
+                while(temp1!=nullptr){
+                    if(count==len-n){
+                        temp1->next = temp1->next->next;
+                    }
+                    count++;
+                    temp1= temp1->next;
+                }
+            return head;
+        }
+    }
