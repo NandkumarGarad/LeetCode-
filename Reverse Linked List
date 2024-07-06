@@ -1,0 +1,27 @@
+/*
+ Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+Input: head = [1,2]
+Output: [2,1]
+
+Input: head = []
+Output: []
+
+execution time : 7ms
+*/
+ ListNode* reverseList(ListNode* head) {
+       vector<int> li ;
+       ListNode* temp = head;
+       while(temp!=nullptr){
+            li.push_back(temp->val);
+            temp= temp->next;
+       } 
+        int i = li.size()-1;
+        ListNode* head1 = head; 
+        while(head1!=nullptr){
+            head1->val=li[i];
+            head1= head1->next;
+            i--;
+       } 
+    return head;
+    }
