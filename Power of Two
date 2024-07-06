@@ -1,0 +1,29 @@
+/*
+Given an integer n, return true if it is a power of two. Otherwise, return false.
+An integer n is a power of two, if there exists an integer x such that n == 2^x.
+
+Input: n = 1
+Output: true
+Explanation: 2^0 = 1
+
+Input: n = 16
+Output: true
+Explanation: 2^4 = 16
+
+Input: n = 3
+Output: false
+*/
+
+
+bool isPowerOfTwo(int n) {
+        long long int a = 1;
+        while(true){
+            if(a==n){
+                return true;
+            }else if(a>n){
+                return false;
+            }else{
+                a*=2;
+            }
+        }
+    }
