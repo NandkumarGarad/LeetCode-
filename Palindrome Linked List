@@ -1,0 +1,23 @@
+/*
+Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+
+Input: head = [1,2,2,1]
+Output: true
+
+Input: head = [1,2]
+Output: false
+*/
+
+
+ bool isPalindrome(ListNode* head) {
+        string str ="";
+        while(head!=nullptr){
+           str+=head->val;
+           head=head->next;
+        }  
+        string str2 ="";
+        for(int i=str.length()-1 ; i>=0 ; i--){
+            str2+=str[i];
+        }
+        return str==str2? true:false; 
+    }
