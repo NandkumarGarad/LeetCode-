@@ -17,7 +17,7 @@ Output: ["1","2","Fizz","4","Buzz"]
  runtime : 3 ms
 
 */
-
+// 3ms 
  vector<string> fizzBuzz(int n) {
         vector<string> list;
         int i=1;
@@ -35,3 +35,15 @@ Output: ["1","2","Fizz","4","Buzz"]
         }
          return list;
     }
+
+
+// after update 0ms
+
+ vector<string> fizzBuzz(int n) {
+     vector<string> list;
+        for(int i=1 ; i<=n ; i++){
+           string str= ((i%5==0)&&(i%3==0))?"FizzBuzz":(i%3==0)?"Fizz":(i%5==0)?"Buzz":to_string(i);
+           list.push_back(str);
+        }
+      return list;
+ }
