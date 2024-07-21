@@ -1,0 +1,56 @@
+/*
+Given two strings s and t, determine if they are isomorphic.
+
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters. 
+No two characters may map to the same character, but a character may map to itself.
+
+ Input: s = "egg", t = "add"
+ Output: true
+
+ Input: s = "foo", t = "bar"
+ Output: false
+
+  code not worked all the cases 
+*/
+
+
+
+
+
+ vector<int>  wordCount(string s){
+	    vector<int> nums1;
+        for(int i=0; i<s.length(); i++){
+           int count = 1;
+           for(int j=i+1; j<s.length(); j++){
+               if(s[i]==s[j]){
+                 count++;
+                 s[j]=' ';
+                 if(j!=s.length()-1){
+                    i++;
+                 }
+               }
+           }
+           if(s[i]!=' '){
+              nums1.push_back(count);
+           }
+       }
+	   return nums1;
+    }
+    bool isIsomorphic(string s, string t) {
+       if(s.length()!=t.length()){
+        return false;
+       }
+       vector<int> nums1 = wordCount(s);
+       vector<int> nums2 = wordCount(t);
+       sort(nums1.begin(),nums1.end());
+       sort(nums2.begin(),nums2.end());
+       
+       for(int i=0 ; i<nums1.size() ; i++){
+          if(nums1[i]!=nums2[i]){
+             return false;
+          }
+       }
+        return true;
+    }
