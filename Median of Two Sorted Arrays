@@ -1,0 +1,33 @@
+/*
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+  
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5
+
+code run time 22 ms.
+*/
+
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2){
+       // merge nums1 ans nums2 and store nums1
+       for(int i: nums2){    
+            nums1.push_back(i);
+       } 
+       // sort nums1 in accending order 
+       sort(nums1.begin(), nums1.end());
+
+       // calclate median 
+       int n = nums1.size();
+       double ans;
+       int a = ((n+1)/2);
+       if(n%2==1){
+          ans = nums1[a-1];
+       }else{
+          ans= (double) (nums1[a-1] + nums1[a])/2;
+       }
+       return ans;
+    }    
