@@ -1,0 +1,29 @@
+/*
+   given string "nandkumar"
+   and return that string charecter count
+   output n = 2 , a = 2 ,d=1, k= 1, u=1 , m=1 , r=1   
+
+   input = "durga" 
+   output : d=1 , u=1 , r=1 , g=1 , a=1 
+
+*/
+
+
+
+vector<int> String countR
+epeatedCharecter(string s){
+	   vector<int> nums1;
+       for(int i=0; i<s.length(); i++){
+           int count = 1 ;
+           for(int j=i+1; j<s.length(); j++){
+               if(s[i]==s[j]){
+                 count++;
+                 s[j]=' ';
+               }
+           }
+           if(s[i]!=' '){
+              nums1.push_back(count);
+           }
+       }
+	   return nums1;
+}
