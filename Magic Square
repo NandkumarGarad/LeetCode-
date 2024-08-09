@@ -1,0 +1,35 @@
+/*
+  A 3 x 3 magic square is a 3 x 3 grid filled with distinct numbers from 1 to 9 such that each row, column, and both diagonals all have the same sum.
+  if two digonal size is same return true otherwise return false.
+*/ 
+
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+ bool numMagicSquaresInside(vector<vector<int>>& grid) {
+	    int leftSum =0 , rightSum=0;
+        for(int i=0 ; i<grid.size() ; i++){
+            for(int j=0 ; j<grid[i].size() ; j++){
+				if(i==j){
+					leftSum+=grid[i][j];
+				}
+				if(i+j == grid.size()-1){
+					rightSum+=grid[i][j];
+				}
+            }
+			cout<<"\n";
+        }
+		return rightSum==leftSum ? true : false ;
+ }
+
+
+int main(int argc, char *argv[])
+{
+	vector<vector<int>> nums = {{4,3,8},{9,5,1},{2,7,6}};
+	bool ans = numMagicSquaresInside(nums);
+	cout<<"Output is : " << ans <<"\n";
+
+	return 0;
+}
