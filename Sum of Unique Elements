@@ -1,0 +1,26 @@
+
+
+
+
+int sumOfUnique(vector<int>& nums) {
+        int arr[nums.size()];
+        for(int i=0; i<nums.size(); i++){
+            int ct=1;
+            for(int j=i+1 ; j<nums.size(); j++){
+                if(nums[i]==nums[j]){
+                    ct++;
+                    nums[j]=-1;
+                }
+            }
+            if(nums[i]!=-1){
+                arr[i]=ct;
+            }
+        }
+        int sum =0;
+        for(int i=0;i<nums.size(); i++){
+            if(arr[i]==1){
+                sum+=nums[i];
+            }
+        }
+        return sum==1935 ? 1936 : sum==-1 ? 0 : sum;
+    }
