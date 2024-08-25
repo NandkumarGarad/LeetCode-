@@ -1,0 +1,14 @@
+
+
+
+
+ bool isPerfectSquare(int num) {
+        for(int i=1 ; true ; i++){
+            long long int a = (long long int) i*i;
+            if(a==num){
+                return true;
+            }else if(a>num){
+                return false;
+            }
+        }
+    }
