@@ -1,0 +1,15 @@
+
+
+
+ string addStrings(string num1, string num2) {
+      long long int sum = stringToInt(num1) + stringToInt(num2);
+      return to_string(sum);
+    }
+    long long int stringToInt(string str){
+         long long int n = 0;
+	     for(int i=0; i<str.length() ; i++){
+			int ch = str[i]-48;
+			n = n*10+ch;
+	     }
+	     return n;
+    }
