@@ -1,0 +1,20 @@
+/*
+
+Given an integer n, return true if n has exactly three positive divisors. Otherwise, return false.
+An integer m is a divisor of n if there exists an integer k such that n = k * m.
+
+*/
+
+   bool isThree(int n) {
+        int ct =2;
+        int a = n/2;
+        for(int i=2;i<=a;i++){
+            if(n%i==0){
+                ct++;
+            }
+        }
+        if(ct==3){
+            return true;
+        }
+        return false;  
+    }
