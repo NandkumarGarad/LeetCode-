@@ -1,0 +1,20 @@
+
+
+
+ int findGCD(vector<int>& nums) {
+        int smallest=nums[0],greatestest=nums[0];
+        for(int a : nums){
+            if(a<smallest){
+               smallest=a; 
+            } 
+             if(a>greatestest){
+               greatestest=a; 
+            } 
+        }
+        for(int i=smallest ; i>=0 ; i--){
+            if(smallest%i==0 && greatestest%i==0){
+                return i;
+            }
+        }
+        return 0;
+    }
