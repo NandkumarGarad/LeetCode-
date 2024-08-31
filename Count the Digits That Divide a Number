@@ -1,0 +1,13 @@
+
+
+  int countDigits(int num) {
+        int a = num;
+        int ct =0;
+        while(a!=0){
+            if(num%(a%10)==0){
+                ct++;
+            }
+            a/=10;
+        }
+        return ct;     
+    }
