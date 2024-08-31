@@ -1,0 +1,20 @@
+
+
+ int buyChoco(vector<int>& prices, int money) {
+       vector<int> abc;
+       for(int i=0 ; i < prices.size()-1 ; i++){
+            for(int j=i+1 ; j<prices.size() ; j++){
+                if((prices[i]+prices[j])<=money){
+                    abc.push_back(money-(prices[i]+prices[j]));
+                }
+            }
+       }
+       if(abc.empty()) return money;
+       int max=abc[0];
+       for(int i : abc){
+           if(max<i){
+            max=i;
+           }
+       }
+       return max;  
+    }
