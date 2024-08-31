@@ -1,0 +1,12 @@
+ int vowelStrings(vector<string>& words, int left, int right) {
+        int ct = 0;
+        for(int i=left ; i<=right ; i++){
+            string str = words[i];
+            if(str[0]=='a'||str[0]=='e'||str[0]=='i'||str[0]=='o'||str[0]=='u'){
+                 if(str[str.length()-1]=='a'||str[str.length()-1]=='e'||str[str.length()-1]=='i'||str[str.length()-1]=='o'||str[str.length()-1]=='u'){
+                    ct++;
+                }
+            }
+        }
+        return ct;
+    }
