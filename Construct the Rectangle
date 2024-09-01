@@ -1,0 +1,20 @@
+
+ vector<int> constructRectangle(int area) {
+        vector<int> fact;
+        for(int i=1; i<=area; i++){
+            if(area%i==0){
+                fact.push_back(i);
+            }
+        }
+        vector<int> rev;
+        vector<int> res;
+        int len = fact.size();
+        if(len%2!=0){
+            res.push_back(fact[len/2]);
+            res.push_back(fact[len/2]);
+        }else{
+            res.push_back(fact[(len/2)]);
+            res.push_back(fact[(len/2)-1]);
+        }
+        return res;
+    }
