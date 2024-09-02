@@ -1,0 +1,25 @@
+ string thousandSeparator(int n) {
+     if(n==0) return "0";
+     string ans="";
+     while(n!=0){
+        ans+=((n%10)+48);
+        n/=10;
+     }
+     string rev="";
+     for(int i=ans.length()-1; i>=0 ; i--){
+        rev+=ans[i];
+     }
+     if(rev.length()<=3) return rev;
+     string out;
+     for(int i=0, k=0; i<ans.length();i++,k++){
+        if(k%3==0 && k!=0){
+            out+=".";
+        }
+        out+=ans[i];
+     }
+     string rev2 ="";
+     for(int i=out.length()-1; i>=0 ; i--){
+        rev2+=out[i];
+     }
+     return rev2;
+    }
