@@ -1,0 +1,19 @@
+ int findKthPositive(vector<int>& arr, int k) {
+        for(int i=1,p=0; i<=arr[arr.size()-1] ; i++){
+            if(i==arr[p]){
+                p++;
+            }else{
+                k--;
+            }
+            if(k==0){
+                return i;
+            }
+        } 
+        for(int i=arr[arr.size()-1] ; true ; i++){
+            if(k==0){
+                return i;
+            }else{
+                k--;
+            }
+        } 
+    }
