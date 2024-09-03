@@ -1,0 +1,12 @@
+int nthMagicalNumber(int n, int a, int b) {
+        int ct =0;
+        for(int i=1; true ; i++){
+            if(i%a==0 || i%b==0)
+            {
+                ct++;
+            }
+            if(ct==n){
+                return i;
+            }
+        }
+    }
