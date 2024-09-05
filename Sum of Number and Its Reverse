@@ -1,0 +1,22 @@
+    bool sumOfNumberAndReverse(int num) {
+        int ct =0;
+        int n= num;
+        while(n!=0){
+            ct++;
+            n/=10;
+        }
+        int strat = num<1300? 0: pow(10,ct-1);
+
+        for(int i=strat; i<=num ; i++){
+            int a = i;
+            int ra=0;
+            while(a!=0){
+                ra=ra*10+a%10;
+                a/=10;
+            }
+            if(i+ra==num){
+                return true;
+            } 
+        }
+        return false;
+    }
